@@ -35,6 +35,7 @@ class HomePage extends StatelessWidget {
       ),
       body: Stack(
         children: [
+          // Background
           Container(
             width: double.infinity,
             height: MediaQuery.of(context).size.height * 2 / 3,
@@ -54,6 +55,7 @@ class HomePage extends StatelessWidget {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter)),
           ),
+          // Top Screen
           Container(
             width: double.infinity,
             height: MediaQuery.of(context).size.height * 2 / 3,
@@ -182,6 +184,7 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
+          // Bottom Screen
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(

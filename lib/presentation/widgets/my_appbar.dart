@@ -37,7 +37,7 @@ AppBar myAppBar(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Icon(titleIcon),
-          SizedBox(width: 5,),
+          const SizedBox(width: 5,),
           Text(
             title!,
             style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),

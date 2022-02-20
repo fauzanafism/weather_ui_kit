@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:weather_ui_kit/presentation/constant/ccolors.dart';
 import 'package:weather_ui_kit/presentation/widgets/card_item.dart';
 
 import '../widgets/my_appbar.dart';
+import '../widgets/top_background.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,27 +20,9 @@ class HomePage extends StatelessWidget {
       body: Stack(
         children: [
           // Background
-          Container(
-            width: double.infinity,
-            height: MediaQuery.of(context).size.height * 2 / 3,
-            decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                      spreadRadius: -40,
-                      offset: const Offset(0, 100),
-                      color: Ccolors.lastBlue,
-                      blurRadius: 90)
-                ],
-                borderRadius: const BorderRadius.only(
-                    bottomLeft: Radius.circular(50),
-                    bottomRight: Radius.circular(50)),
-                gradient: LinearGradient(
-                    colors: [Ccolors.firstBlue, Ccolors.lastBlue],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter)),
-          ),
+          const TopBackground(size: 2,),
           // Top Screen
-          Container(
+          SizedBox(
             width: double.infinity,
             height: MediaQuery.of(context).size.height * 2 / 3,
             child: Column(
@@ -255,3 +237,5 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+
+

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:weather_ui_kit/presentation/constant/ccolors.dart';
+import 'package:weather_ui_kit/presentation/widgets/card_item.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -177,11 +178,82 @@ class HomePage extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
+              padding: const EdgeInsets.only(top: 25, left: 35, right: 35),
               decoration: const BoxDecoration(
                 color: Colors.black54,
               ),
               height: MediaQuery.of(context).size.height * 1 / 4 + 10,
-              
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        'Today',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 23),
+                      ),
+                      Text(
+                        '7 days >',
+                        style: TextStyle(color: Colors.white54, fontSize: 17),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: 36,
+                  ),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height * 1 / 9,
+                    child: ListView.builder(
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemCount: 1,
+                        itemBuilder: (context, int index) {
+                          return Wrap(
+                            spacing: 20,
+                            runSpacing: 20,
+                            children: cardItems
+                                .map((item) => Container(
+                                      padding: EdgeInsets.all(10),
+                                      height: 110,
+                                      width: 70,
+                                      decoration: BoxDecoration(
+                                          color: item.color,
+                                          border:
+                                              Border.all(color: Colors.grey),
+                                          borderRadius:
+                                              BorderRadius.circular(30)),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceEvenly,
+                                        children: [
+                                          Text(
+                                            item.temperature,
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20),
+                                          ),
+                                          Image(
+                                            image: AssetImage(item.imagePath),
+                                            height: 40,
+                                          ),
+                                          Text(item.time,
+                                              style: TextStyle(
+                                                  color: Colors.white54,
+                                                  fontSize: 13))
+                                        ],
+                                      ),
+                                    ))
+                                .toList(),
+                          );
+                        }),
+                  )
+                ],
+              ),
             ),
           )
         ],

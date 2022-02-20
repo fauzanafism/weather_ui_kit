@@ -85,10 +85,17 @@ class HomePage extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                const SizedBox(
+                Container(
                     width: 200,
+                    decoration: const BoxDecoration(boxShadow: [
+                      BoxShadow(
+                          offset: Offset(26, 30),
+                          color: Colors.black12,
+                          blurRadius: 19,
+                          spreadRadius: -40)
+                    ]),
                     child:
-                        Image(image: AssetImage('assets/images/thunder.png'))),
+                        const Image(image: AssetImage('assets/images/thunder.png'))),
                 const Text(
                   "21\u00B0",
                   style: TextStyle(
@@ -201,7 +208,7 @@ class HomePage extends StatelessWidget {
                       )
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 36,
                   ),
                   SizedBox(
@@ -216,7 +223,7 @@ class HomePage extends StatelessWidget {
                             runSpacing: 20,
                             children: cardItems
                                 .map((item) => Container(
-                                      padding: EdgeInsets.all(10),
+                                      padding: const EdgeInsets.all(10),
                                       height: 110,
                                       width: 70,
                                       decoration: BoxDecoration(
@@ -232,7 +239,7 @@ class HomePage extends StatelessWidget {
                                         children: [
                                           Text(
                                             item.temperature,
-                                            style: TextStyle(
+                                            style: const TextStyle(
                                                 color: Colors.white,
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 20),
@@ -242,7 +249,7 @@ class HomePage extends StatelessWidget {
                                             height: 40,
                                           ),
                                           Text(item.time,
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   color: Colors.white54,
                                                   fontSize: 13))
                                         ],

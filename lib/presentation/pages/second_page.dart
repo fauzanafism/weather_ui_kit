@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_ui_kit/presentation/widgets/my_appbar.dart';
 import 'package:weather_ui_kit/presentation/widgets/top_background.dart';
+import 'package:weather_ui_kit/presentation/widgets/weather_params.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({Key? key}) : super(key: key);
@@ -88,6 +89,7 @@ class SecondPage extends StatelessWidget {
                 const SizedBox(
                   height: 15,
                 ),
+                const WeatherParams()
               ],
             ),
           )

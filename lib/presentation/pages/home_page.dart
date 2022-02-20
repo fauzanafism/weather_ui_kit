@@ -3,6 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:weather_ui_kit/presentation/constant/ccolors.dart';
 import 'package:weather_ui_kit/presentation/widgets/card_item.dart';
 
+import '../widgets/my_appbar.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -10,29 +12,11 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(
-        backgroundColor: Ccolors.firstBlue,
-        elevation: 0,
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 14),
-            child: Icon(Icons.menu),
-          )
-        ],
-        leading: const Icon(Icons.apps),
-        centerTitle: true,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: const <Widget>[
-            Icon(Icons.location_on),
-            Text(
-              'Bogor',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-            )
-          ],
-        ),
-      ),
+      appBar: myAppBar(
+          actionIcon: Icons.menu,
+          leadingIcon: Icons.apps,
+          title: 'Bogor',
+          titleIcon: Icons.location_on),
       body: Stack(
         children: [
           // Background
@@ -96,8 +80,8 @@ class HomePage extends StatelessWidget {
                           blurRadius: 19,
                           spreadRadius: -40)
                     ]),
-                    child:
-                        const Image(image: AssetImage('assets/images/thunder.png'))),
+                    child: const Image(
+                        image: AssetImage('assets/images/thunder.png'))),
                 const Text(
                   "21\u00B0",
                   style: TextStyle(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:weather_ui_kit/presentation/widgets/card_item.dart';
 
 import '../widgets/my_appbar.dart';
 import '../widgets/top_background.dart';
+import '../widgets/weather_params.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,7 +20,9 @@ class HomePage extends StatelessWidget {
       body: Stack(
         children: [
           // Background
-          const TopBackground(size: 2,),
+          const TopBackground(
+            size: 2,
+          ),
           // Top Screen
           SizedBox(
             width: double.infinity,
@@ -89,64 +91,7 @@ class HomePage extends StatelessWidget {
                   endIndent: 40,
                 ),
                 const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox(
-                      width: 85,
-                      child: Column(
-                        children: const [
-                          Icon(Icons.air, color: Colors.white),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text('13 km/h',
-                              style: TextStyle(color: Colors.white)),
-                          Text(
-                            'Wind',
-                            style: TextStyle(color: Colors.white60),
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 85,
-                      child: Column(
-                        children: const [
-                          FaIcon(
-                            FontAwesomeIcons.thermometerThreeQuarters,
-                            color: Colors.white,
-                          ),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text('24 %', style: TextStyle(color: Colors.white)),
-                          Text(
-                            'Humidity',
-                            style: TextStyle(color: Colors.white60),
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 85,
-                      child: Column(
-                        children: const [
-                          FaIcon(FontAwesomeIcons.cloudRain,
-                              color: Colors.white),
-                          SizedBox(
-                            height: 8,
-                          ),
-                          Text('87%', style: TextStyle(color: Colors.white)),
-                          Text(
-                            'Precipitation',
-                            style: TextStyle(color: Colors.white60),
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
-                )
+                const WeatherParams()
               ],
             ),
           ),
@@ -237,5 +182,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-

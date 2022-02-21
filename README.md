@@ -5,5 +5,5 @@
 
 ## Screenshots
 
-<img src=ss\home.png width="auto" height="500px">
-<img src=ss\second.png width="auto" height="500px">
+<img src=ss\home.jpeg width="auto" height="500px">
+<img src=ss\second.jpeg width="auto" height="500px">

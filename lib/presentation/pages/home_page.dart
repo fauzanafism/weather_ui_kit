@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_ui_kit/presentation/constant/image_path.dart';
+import 'package:weather_ui_kit/presentation/pages/second_page.dart';
 import 'package:weather_ui_kit/presentation/widgets/card_item.dart';
 
 import '../widgets/my_appbar.dart';
@@ -62,8 +63,7 @@ class HomePage extends StatelessWidget {
                           blurRadius: 19,
                           spreadRadius: -40)
                     ]),
-                    child: Image(
-                        image: AssetImage(ImagePath.thunder))),
+                    child: Image(image: AssetImage(ImagePath.thunder))),
                 const Text(
                   "21\u00B0",
                   style: TextStyle(
@@ -116,7 +116,7 @@ class HomePage extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(context, '/second');
+                          Navigator.of(context).push(_createRoute());
                         },
                         child: const Text(
                           '7 days >',
@@ -184,4 +184,23 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+Route _createRoute() {
+  return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) =>
+          const SecondPage(),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        const begin = Offset(0, 1);
+        const end = Offset.zero;
+        const curve = Curves.ease;
+
+        var tween =
+            Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+        return SlideTransition(
+          position: animation.drive(tween),
+          child: child,
+        );
+      });
 }

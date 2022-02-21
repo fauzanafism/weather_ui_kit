@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_ui_kit/presentation/constant/image_path.dart';
 import 'package:weather_ui_kit/presentation/widgets/card_item.dart';
 
 import '../widgets/my_appbar.dart';
@@ -64,8 +65,8 @@ class HomePage extends StatelessWidget {
                           blurRadius: 19,
                           spreadRadius: -40)
                     ]),
-                    child: const Image(
-                        image: AssetImage('assets/images/thunder.png'))),
+                    child: Image(
+                        image: AssetImage(ImagePath.thunder))),
                 const Text(
                   "21\u00B0",
                   style: TextStyle(

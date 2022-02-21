@@ -49,7 +49,7 @@ class SecondPage extends StatelessWidget {
                       children: [
                         const Text('Tomorrow',
                             style: TextStyle(
-                                fontSize: 24,
+                                fontSize: 22,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w400)),
                         Row(
@@ -59,14 +59,14 @@ class SecondPage extends StatelessWidget {
                               style: TextStyle(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 75),
+                                  fontSize: 60),
                             ),
                             Text(
                               '/17\u00B0',
                               style: TextStyle(
                                   color: Colors.white54,
                                   fontWeight: FontWeight.w400,
-                                  fontSize: 40),
+                                  fontSize: 35),
                             )
                           ],
                         ),
@@ -81,7 +81,7 @@ class SecondPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 15,
+                  height: 4,
                 ),
                 const Divider(
                   color: Colors.lightBlue,
@@ -89,7 +89,7 @@ class SecondPage extends StatelessWidget {
                   endIndent: 30,
                 ),
                 const SizedBox(
-                  height: 15,
+                  height: 4,
                 ),
                 const WeatherParams()
               ],

@@ -11,9 +11,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      title: 'Weather',
       debugShowCheckedModeBanner: false,
-      home: HomePage()
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomePage(),
+        '/second':(context) => const SecondPage()
+      },
+      home: const HomePage()
     );
   }
 }

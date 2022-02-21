@@ -53,11 +53,8 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     )),
-                const SizedBox(
-                  height: 30,
-                ),
                 Container(
-                    width: 200,
+                    width: 150,
                     decoration: const BoxDecoration(boxShadow: [
                       BoxShadow(
                           offset: Offset(26, 30),
@@ -70,7 +67,7 @@ class HomePage extends StatelessWidget {
                 const Text(
                   "21\u00B0",
                   style: TextStyle(
-                      fontSize: 120,
+                      fontSize: 100,
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
@@ -109,17 +106,22 @@ class HomePage extends StatelessWidget {
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Text(
+                    children: [
+                      const Text(
                         'Today',
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 23),
                       ),
-                      Text(
-                        '7 days >',
-                        style: TextStyle(color: Colors.white54, fontSize: 17),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, '/second');
+                        },
+                        child: const Text(
+                          '7 days >',
+                          style: TextStyle(color: Colors.white54, fontSize: 17),
+                        ),
                       )
                     ],
                   ),

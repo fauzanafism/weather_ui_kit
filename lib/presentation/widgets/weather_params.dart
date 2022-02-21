@@ -20,10 +20,11 @@ class WeatherParams extends StatelessWidget {
                 height: 8,
               ),
               Text('13 km/h',
-                  style: TextStyle(color: Colors.white70)),
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w600)),
               Text(
                 'Wind',
-                style: TextStyle(color: Colors.white70),
+                style: TextStyle(color: Colors.white70, fontSize: 12),
               )
             ],
           ),
@@ -39,10 +40,12 @@ class WeatherParams extends StatelessWidget {
               SizedBox(
                 height: 8,
               ),
-              Text('24 %', style: TextStyle(color: Colors.white70)),
+              Text('24 %',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w600)),
               Text(
                 'Humidity',
-                style: TextStyle(color: Colors.white70),
+                style: TextStyle(color: Colors.white70, fontSize: 12),
               )
             ],
           ),
@@ -51,15 +54,16 @@ class WeatherParams extends StatelessWidget {
           width: 85,
           child: Column(
             children: const [
-              FaIcon(FontAwesomeIcons.cloudRain,
-                  color: Colors.white70),
+              FaIcon(FontAwesomeIcons.cloudRain, color: Colors.white70),
               SizedBox(
                 height: 8,
               ),
-              Text('87%', style: TextStyle(color: Colors.white70)),
+              Text('87%',
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.w600)),
               Text(
                 'Precipitation',
-                style: TextStyle(color: Colors.white70),
+                style: TextStyle(color: Colors.white70, fontSize: 12),
               )
             ],
           ),
@@ -68,4 +72,3 @@ class WeatherParams extends StatelessWidget {
     );
   }
 }
-

@@ -19,7 +19,6 @@ class MyApp extends StatelessWidget {
         '/': (context) => const HomePage(),
         '/second':(context) => const SecondPage()
       },
-      home: const HomePage()
     );
   }
 }

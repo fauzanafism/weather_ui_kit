@@ -25,12 +25,13 @@ class SecondPage extends StatelessWidget {
             width: double.infinity,
             height: MediaQuery.of(context).size.height * 1 / 3,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                      width: 100,
+                      width: 120,
                       decoration: const BoxDecoration(boxShadow: [
                         BoxShadow(
                             offset: Offset(35, 30),
@@ -80,16 +81,10 @@ class SecondPage extends StatelessWidget {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 4,
-                ),
                 const Divider(
                   color: Colors.lightBlue,
                   indent: 30,
                   endIndent: 30,
-                ),
-                const SizedBox(
-                  height: 4,
                 ),
                 const WeatherParams()
               ],

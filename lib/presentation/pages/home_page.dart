@@ -31,6 +31,7 @@ class HomePage extends StatelessWidget {
             height: MediaQuery.of(context).size.height * 2 / 3,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Container(
                     padding: const EdgeInsets.all(5),
@@ -55,7 +56,7 @@ class HomePage extends StatelessWidget {
                       ],
                     )),
                 Container(
-                    width: 150,
+                    width: 170,
                     decoration: const BoxDecoration(boxShadow: [
                       BoxShadow(
                           offset: Offset(26, 30),
@@ -64,31 +65,33 @@ class HomePage extends StatelessWidget {
                           spreadRadius: -40)
                     ]),
                     child: Image(image: AssetImage(ImagePath.thunder))),
-                const Text(
-                  "21\u00B0",
-                  style: TextStyle(
-                      fontSize: 100,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                Column(
+                  children: const [
+                    Text(
+                      "21\u00B0",
+                      style: TextStyle(
+                          fontSize: 100,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                    Text(
+                      'Thunderstorm',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    Text(
+                      'Monday, 17 May',
+                      style: TextStyle(color: Colors.white60),
+                    ),
+                  ],
                 ),
-                const Text(
-                  'Thunderstorm',
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.w500),
-                ),
-                const Text(
-                  'Monday, 17 May',
-                  style: TextStyle(color: Colors.white60),
-                ),
-                const SizedBox(height: 20),
                 const Divider(
                   color: Colors.lightBlue,
                   indent: 40,
                   endIndent: 40,
                 ),
-                const SizedBox(height: 20),
                 const WeatherParams()
               ],
             ),
